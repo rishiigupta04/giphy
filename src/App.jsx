@@ -8,7 +8,7 @@ import Favorites from "./pages/favorites";
 import GifPage from "./pages/single-gif";
 import GifProvider from "./context/gif-context";
 
-// ROUTES/PAGES :-
+// ALL THE ROUTES/PAGES :-
 //----------------------------
 // homepage
 // categories
@@ -49,7 +49,7 @@ const router = createBrowserRouter([
 function App() {
   return (
     <GifProvider>
-      <RouterProvider router={router} />;
+      <RouterProvider router={router} />
     </GifProvider>
   );
 }
