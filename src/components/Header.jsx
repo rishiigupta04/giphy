@@ -2,12 +2,13 @@ import React, { useEffect, useState } from "react";
 import { HiEllipsisVertical, HiMiniBars3BottomRight } from "react-icons/hi2";
 import { Link } from "react-router-dom";
 import { GifState } from "../context/gif-context";
+import GifSearch from "./GifSearch";
 
 const Header = () => {
   const [categories, setCategories] = useState([]);
   const [showCategories, setshowCategories] = useState(false);
 
-  const { gifFetcher, filter, setFilter, favorites } = GifState();
+  const { gifFetcher, favorites } = GifState();
 
   const fetchGifCategories = async () => {
     const { data } = await gifFetcher.categories();
@@ -92,6 +93,7 @@ const Header = () => {
       </div>
 
       {/* search */}
+      <GifSearch />
     </nav>
   );
 };
