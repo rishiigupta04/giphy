@@ -3,10 +3,10 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import AppLayout from "./layouts/app-layout";
 import Home from "./pages/home";
 import Category from "./pages/category";
-import Search from "./pages/search";
 import Favorites from "./pages/favorites";
 import GifPage from "./pages/single-gif";
 import GifProvider from "./context/gif-context";
+import SearchPage from "./pages/search";
 
 // ALL THE ROUTES/PAGES :-
 //----------------------------
@@ -32,7 +32,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/search/:query",
-        element: <Search />,
+        element: <SearchPage />,
       },
       {
         path: "/:type:slug",
