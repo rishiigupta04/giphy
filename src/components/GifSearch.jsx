@@ -30,7 +30,7 @@ const GifSearch = () => {
         value={query} // Value of the input field is query state
         onChange={(e) => setQuery(e.target.value)} // On change event, update query state
         onKeyDown={(e) => e.key === "Enter" && searchGIFs(query)} // On enter key press, search GIFs
-        className="w-full pl-4 pr-14 py-5 text-xl text-black rounded-tl rounded-bl border-gray-300 outline-none " // CSS classes for styling
+        className="w-full pl-4 pr-14 py-5 text-sm sm:text-xl text-black rounded-tl rounded-bl border-gray-300 outline-none " // CSS classes for styling
         placeholder="Search all the GIFs and Stickers" // Placeholder text for input field
       />
 
@@ -47,7 +47,7 @@ const GifSearch = () => {
       {/* Button for searching GIFs */}
       <button
         onClick={searchGIFs} // On click event, search GIFs
-        className="bg-gradient-to-tr from-pink-600 to-pink-400 text-white px-4 py-4 rounded-tr rounded-br"
+        className="bg-gradient-to-tr from-pink-600 to-pink-400 text-white px-4 py-3 sm:py-4 rounded-tr rounded-br"
       >
         <HiOutlineMagnifyingGlass size={35} className="-scale-x-100" />{" "}
         {/* Magnifying glass icon */}

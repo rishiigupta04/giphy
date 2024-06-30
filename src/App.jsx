@@ -35,7 +35,7 @@ const router = createBrowserRouter([
         element: <SearchPage />,
       },
       {
-        path: "/:type:slug",
+        path: "/:type/:slug",
         element: <GifPage />,
       },
       {
