@@ -17,7 +17,9 @@ const Favorites = () => {
 
   return (
     <div className="mt-2">
-      <span className="faded-text ">My Favorites</span>
+      <span className="faded-text text-3xl font-extrabold my-3">
+        My Favorites
+      </span>
       <div className="columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-2 mt-2">
         {favoriteGIFs.map((gif) => (
           <Gif gif={gif} key={gif.id} />
