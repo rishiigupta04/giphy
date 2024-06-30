@@ -7,6 +7,7 @@ import FollowOn from "../components/FollowOn";
 import { HiOutlineExternalLink } from "react-icons/hi";
 
 const contentType = ["gifs", "stickers", "text"];
+
 const GifPage = () => {
   const [gif, setGif] = useState({});
   const [relatedGifs, setRelatedGifs] = useState([]);
@@ -16,24 +17,24 @@ const GifPage = () => {
 
   const { gifFetcher } = GifState();
 
-  const fetchGif = async () => {
-    const gifId = slug.split("-");
-    const { data } = await gifFetcher.gif(gifId[gifId.length - 1]);
-    const { data: related } = await gifFetcher.related(
-      gifId[gifId.length - 1],
-      {
-        type: "gifs",
-        limit: 10,
-      }
-    );
-    setGif(data);
-    setRelatedGifs(related);
-  };
-
   useEffect(() => {
-    // if (!contentType.includes(type)) {
-    //   throw new Error("Invalid Content Type");
-    // }
+    if (!contentType.includes(type)) {
+      throw new Error("Invalid Content Type");
+    }
+
+    const fetchGif = async () => {
+      const gifId = slug.split("-");
+      const { data } = await gifFetcher.gif(gifId[gifId.length - 1]);
+      const { data: related } = await gifFetcher.related(
+        gifId[gifId.length - 1],
+        {
+          type: "gifs",
+          limit: 10,
+        }
+      );
+      setGif(data);
+      setRelatedGifs(related);
+    };
 
     fetchGif();
   }, []);
