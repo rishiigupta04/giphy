@@ -81,7 +81,7 @@ const GifPage = () => {
                     className="flex items-center faded-text cursor-pointer"
                     onClick={() => setReadMore(!readMore)}
                   >
-                    {!readMore ? (
+                    {readMore ? (
                       <>
                         Read less <HiMiniChevronUp size={20} />
                       </>
